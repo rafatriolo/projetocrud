@@ -33,9 +33,9 @@ class Produtos extends Crud
     }
 
     public function insert(){
-        $sql = "INSERT INTO $this->table (nome ,descricao , preco) VALUES (:nome , :descricao , :preco )";
+        $sql = "INSERT INTO $this->table (nome_produto ,descricao , preco) VALUES (:nome_produto , :descricao , :preco )";
         $stmt = DB::prepare($sql);
-        $stmt->bindParam(':nome' , $this->nome);
+        $stmt->bindParam(':nome_produto' , $this->nome);
         $stmt->bindParam(':descricao' , $this->descricao);
         $stmt->bindParam(':preco' , $this->preco);
         return $stmt->execute();
@@ -44,9 +44,9 @@ class Produtos extends Crud
 
     public function update($id)
     {
-        $sql = "UPDATE $this->table SET nome = :nome , descricao = :descricao , preco= :preco WHERE id = :id";
+        $sql = "UPDATE $this->table SET nome_produto = :nome_produto , descricao = :descricao , preco= :preco WHERE id = :id";
         $stmt = DB::prepare($sql);
-        $stmt->bindParam(':nome' , $this->nome);
+        $stmt->bindParam(':nome_produto' , $this->nome);
         $stmt->bindParam(':descricao' , $this->descricao);
         $stmt->bindParam(':preco' , $this->preco);
         $stmt->bindParam(':id' , $id ,  PDO::PARAM_INT);

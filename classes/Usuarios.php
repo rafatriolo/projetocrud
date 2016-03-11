@@ -33,9 +33,9 @@ class Usuarios extends Crud
     }
 
     public function insert(){
-        $sql = "INSERT INTO $this->table (nome ,telefone , email) VALUES (:nome , :telefone , :email )";
+        $sql = "INSERT INTO $this->table (nome_cliente ,telefone , email) VALUES (:nome_cliente , :telefone , :email )";
         $stmt = DB::prepare($sql);
-        $stmt->bindParam(':nome' , $this->nome);
+        $stmt->bindParam(':nome_cliente' , $this->nome);
         $stmt->bindParam(':telefone' , $this->telefone);
         $stmt->bindParam(':email' , $this->email);
         return $stmt->execute();
@@ -44,9 +44,9 @@ class Usuarios extends Crud
 
     public function update($id)
     {
-        $sql = "UPDATE $this->table SET nome = :nome , telefone = :telefone , email= :email WHERE id = :id";
+        $sql = "UPDATE $this->table SET nome_cliente = :nome_cliente , telefone = :telefone , email= :email WHERE id = :id";
         $stmt = DB::prepare($sql);
-        $stmt->bindParam(':nome' , $this->nome);
+        $stmt->bindParam(':nome_cliente' , $this->nome);
         $stmt->bindParam(':telefone' , $this->telefone);
         $stmt->bindParam(':email' , $this->email);
         $stmt->bindParam(':id' , $id ,  PDO::PARAM_INT);

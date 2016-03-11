@@ -42,7 +42,7 @@ $usuario = new Usuarios();
 											<tbody>
 											<tr>
 												<td><?php echo $value->id; ?></td>
-												<td><?php echo $value->nome; ?></td>
+												<td><?php echo $value->nome_cliente; ?></td>
 												<td><?php echo $value->telefone; ?></td>
 												<td><?php echo $value->email; ?></td>
 												<td>

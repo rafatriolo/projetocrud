@@ -13,15 +13,21 @@ $pedidos = new Pedidos();
 $pega_clientes = $clientes->findAll();
 $pega_produtos = $produtos->findAll();
 
-if(isset($_POST['comprar'])){
+if(isset($_POST['comprar'])):
 
     $clientes_post = $_POST['cliente'];
     $produtos_post = $_POST['produto'];
 
     $pedidos->setCliente($clientes_post);
     $pedidos->setProduto($produtos_post);
-    $pedidos->insert();
-}
+
+if($pedidos->insert()):
+    echo " <div class='alert alert-success'>
+        <strong>Pedido Inserido com Sucesso!</strong>
+    </div>";
+
+    endif;
+    endif;
 
 
 ?>
@@ -37,7 +43,7 @@ if(isset($_POST['comprar'])){
                             <label>Selecione para qual cliente deseja comprar </label>
                             <select class="form-control" name="cliente" >
                                 <?php foreach($pega_clientes as $cliente ):?>
-                                    <option value="<?php echo $cliente->id ?>"><?php echo $cliente->nome ?> </option>
+                                    <option value="<?php echo $cliente->id ?>"><?php echo $cliente->nome_cliente ?> </option>
                                 <?php endforeach; ?>
                             </select>
                         </div>
@@ -45,7 +51,7 @@ if(isset($_POST['comprar'])){
                             <label>Selecione um produto para Comprar </label>
                             <select class="form-control" name="produto">
                                 <?php foreach($pega_produtos as $valores ):?>
-                                    <option value="<?php echo $valores->id ?>"><?php echo $valores->nome . ' | ' . $valores->preco ?> </option>
+                                    <option value="<?php echo $valores->id ?>"><?php echo $valores->nome_produto . ' | ' . $valores->preco ?> </option>
                                 <?php endforeach; ?>
                             </select>
                         </div>

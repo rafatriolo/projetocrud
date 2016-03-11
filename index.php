@@ -42,12 +42,12 @@ $produto = new Produtos();
 											<tbody>
 											<tr>
 												<td><?php echo $value->id; ?></td>
-												<td><?php echo $value->nome; ?></td>
+												<td><?php echo $value->nome_produto; ?></td>
 												<td><?php echo $value->descricao; ?></td>
 												<td><?php echo $value->preco; ?></td>
 												<td>
 													<?php echo "<a href='editar_produto.php?acao=editar&id=" . $value->id . "'>Editar</a>"; ?>
-													<?php echo "<a href='produtos.php?acao=deletar&id=" . $value->id . "' onclick='return confirm(\"Deseja realmente deletar?\")'>Deletar</a>"; ?>
+													<?php echo "<a href='index.php?acao=deletar&id=" . $value->id . "' onclick='return confirm(\"Deseja realmente deletar?\")'>Deletar</a>"; ?>
 												</td>
 											</tr>
 											</tbody>

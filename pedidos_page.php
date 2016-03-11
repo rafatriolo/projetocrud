@@ -1,14 +1,14 @@
 <?php
 	include_once('template/header.php');
 
-$usuario = new Usuarios();
+$pedidos = new Pedidos();
 ?>
 	<div id="page-wrapper">
 		<div class="container-fluid">
 				<div class="col-xs-12">
 					<div class="panel panel-default">
 						<div class="panel-heading">
-							<h3 class="panel-title"><i class="fa fa-money fa-fw"></i> Clientes</h3>
+							<h3 class="panel-title"><i class="fa fa-money fa-fw"></i> Pedidos</h3>
 						</div>
 						<div class="panel-body">
 							<div class="table-responsive">
@@ -18,7 +18,7 @@ $usuario = new Usuarios();
 									if(isset($_GET['acao']) && $_GET['acao'] == 'deletar'):
 
 										$id = (int)$_GET['id'];
-										if($usuario->Delete($id)){
+										if($pedidos->deletePedidos($id)){
 											echo "Deletado com sucesso!";
 										}
 
@@ -30,24 +30,26 @@ $usuario = new Usuarios();
 										<thead>
 										<tr>
 											<th>#</th>
-											<th>Nome:</th>
-											<th>Telefone:</th>
+											<th>Nome do Cliente </th>
 											<th>E-mail:</th>
+											<th>Nome do Produto</th>
+											<th>Preço </th>
 											<th>Ações:</th>
 										</tr>
 										</thead>
 
-										<?php foreach($usuario->findAll() as $value): ?>
+										<?php foreach($pedidos->findPedidos() as $value): ?>
 
 											<tbody>
 											<tr>
 												<td><?php echo $value->id; ?></td>
-												<td><?php echo $value->nome; ?></td>
-												<td><?php echo $value->telefone; ?></td>
+												<td><?php echo $value->nome_cliente; ?></td>
 												<td><?php echo $value->email; ?></td>
+												<td><?php echo $value->nome_produto; ?></td>
+												<td><?php echo $value->preco; ?></td>
 												<td>
 													<?php echo "<a href='editar_cliente.php?acao=editar&id=" . $value->id . "'>Editar</a>"; ?>
-													<?php echo "<a href='clientes.php?acao=deletar&id=" . $value->id . "' onclick='return confirm(\"Deseja realmente deletar?\")'>Deletar</a>"; ?>
+													<?php echo "<a href='pedidos_page.php?acao=deletar&id=" . $value->id . "' onclick='return confirm(\"Deseja realmente deletar?\")'>Deletar</a>"; ?>
 												</td>
 											</tr>
 											</tbody>

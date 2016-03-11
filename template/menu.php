@@ -8,7 +8,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="index.html">Admin Altran</a>
+			<a class="navbar-brand" href="index.php">Admin Altran</a>
 		</div>
 		<!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
 		<div class="collapse navbar-collapse navbar-ex1-collapse">
@@ -29,7 +29,7 @@
 					<a href="javascript:;" data-toggle="collapse" data-target="#produto"><i class="fa fa-fw fa-arrows-v"></i> Produtos <i class="fa fa-fw fa-caret-down"></i></a>
 					<ul id="produto" class="collapse">
 						<li>
-							<a href="produtos.php">Ver todos os produtos</a>
+							<a href="index.php">Ver todos os produtos</a>
 						</li>
 						<li>
 							<a href="cadastro_produto.php">Adicionar novo</a>
@@ -37,33 +37,15 @@
 					</ul>
 				</li>
 				<li>
-					<a href="pedidos.php"><i class="fa fa-fw fa-table"></i> Pedidos</a>
-				</li>
-				<li>
-					<a href="forms.html"><i class="fa fa-fw fa-edit"></i> Forms</a>
-				</li>
-				<li>
-					<a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
-				</li>
-				<li>
-					<a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
-				</li>
-				<li>
-					<a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
-					<ul id="demo" class="collapse">
+					<a href="javascript:;" data-toggle="collapse" data-target="#pedidos"><i class="fa fa-fw fa-arrows-v"></i> Pedidos <i class="fa fa-fw fa-caret-down"></i></a>
+					<ul id="pedidos" class="collapse">
 						<li>
-							<a href="#">Dropdown Item</a>
+							<a href="pedidos_page.php">Ver todos os pedidos</a>
 						</li>
 						<li>
-							<a href="#">Dropdown Item</a>
+							<a href="cadastro_pedido.php">Adicionar novo</a>
 						</li>
 					</ul>
-				</li>
-				<li>
-					<a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>
-				</li>
-				<li>
-					<a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
 				</li>
 			</ul>
 		</div>

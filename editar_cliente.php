@@ -14,7 +14,7 @@ if(isset($_GET['acao']) && $_GET['acao'] == 'editar'):
     $resultado = $usuario->find($id);
 
     if (isset($_POST['atualizar'])):
-        $nome  = $_POST['nome'];
+        $nome  = $_POST['nome_cliente'];
         $telefone = $_POST['telefone'];
         $email = $_POST['email'];
         $usuario->setNome($nome);
@@ -38,7 +38,7 @@ if(isset($_GET['acao']) && $_GET['acao'] == 'editar'):
 
                         <div class="form-group">
                             <label>Nome</label>
-                            <input type="text"  class="form-control" name="nome" value="<?php echo $resultado->nome; ?>" placeholder="Nome:" />
+                            <input type="text"  class="form-control" name="nome_cliente" value="<?php echo $resultado->nome_cliente; ?>" placeholder="Nome:" />
                         </div>
                         <div class="form-group">
                             <label>E-mail</label>

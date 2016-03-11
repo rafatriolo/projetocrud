@@ -14,7 +14,7 @@ if(isset($_GET['acao']) && $_GET['acao'] == 'editar'):
     $resultado = $produto->find($id);
 
   if (isset($_POST['atualizar_produto'])):
-    $nome  = $_POST['nome'];
+    $nome  = $_POST['nome_produto'];
     $descricao = $_POST['descricao'];
     $preco = $_POST['preco'];
     $produto->setNome($nome);
@@ -38,7 +38,7 @@ endif;
 
                         <div class="form-group">
                             <label>Nome</label>
-                            <input type="text"  class="form-control" name="nome" value="<?php echo $resultado->nome; ?>" placeholder="Nome:" />
+                            <input type="text"  class="form-control" name="nome_produto" value="<?php echo $resultado->nome_produto; ?>" placeholder="Nome:" />
                         </div>
                         <div class="form-group">
                             <label>E-mail</label>
